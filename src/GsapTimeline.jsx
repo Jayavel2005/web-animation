@@ -52,7 +52,7 @@ const GsapTimeline = () => {
             .to(
                 boxes,
                 {
-                    scale: 2,
+                    scale: 6,
                     stagger: 0.3,
                     ease: "none",
                 },
@@ -98,7 +98,7 @@ const GsapTimeline = () => {
     return (
         <div className="text-white">
             {/* Top Spacer (important for smooth scroll entry) */}
-            <div className="h-screen flex items-center justify-center bg-gray-900">
+            <div className="h-screen border flex items-center justify-center bg-gray-900">
                 <h1 className="text-4xl font-bold">
                     Scroll Down to See Timeline Animation
                 </h1>
@@ -116,10 +116,10 @@ const GsapTimeline = () => {
                 <div className="h-16 w-16 bg-orange-600 rounded-full"></div>
             </div>
 
-            {/* Bottom Spacer */}
-            <div className="h-screen bg-gray-900"></div>
+            {/*/!* Bottom Spacer *!/*/}
+            {/*<div className="h-screen bg-gray-900"></div>*/}
         </div>
-    );
+    );``
 };
 
 export default GsapTimeline;
