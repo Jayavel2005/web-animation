@@ -1,22 +1,31 @@
 import {useGSAP} from "@gsap/react";
 import gsap from "gsap";
 import {useRef} from "react";
+import ScrollTrigger from "gsap/ScrollTrigger";
 const GsapStagger = () => {
     const containerRef = useRef(null);
 
     useGSAP(() => {
+        gsap.registerPlugin(ScrollTrigger);
         gsap.from(containerRef.current.children, {
             x: -100,
             opacity: 0,
-            scale : 2.5,
+            scale : 3.5,
             stagger: {
                 amount: 0.4,
                 from : "end",
             },
+            scrollTrigger : {
+                trigger : containerRef.current,
+                start : "top 70%",
+                end : "top 35%",
+                scrub : true,
+                markers : true,
+            },
             duration: 1,
             rotation: 360,
             borderRadius: "100%",
-            ease: "elastic.inOut"
+            ease: "power3.inOut"
         });
     }, []);
     return (
